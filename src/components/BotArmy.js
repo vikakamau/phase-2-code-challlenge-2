@@ -36,7 +36,7 @@ function Bot() {
           {bots.map((bot) => (
             <div key={bot.id} className="col-sm-3 mb-4">
               <div className="card">
-                <Link to={`/cards/${bot.id}`}>
+                <Link to={`/phase-2-code-challlenge-2/cards/${bot.id}`}>
                   <img
                     src={bot.avatar_url}
                     className="card-img-top"
@@ -48,7 +48,7 @@ function Bot() {
                   <p className="card-text">Created At: {bot.created_at}</p>
                   <Button id={bot.id} onDelete={handleDelete} />
                   <button className="btn btn-primary btn-sm m-3" onClick={() => enlistBot(bot)}>Enlist</button>
-                  <Link to={`/cards/${bot.id}`}>
+                  <Link to={`/phase-2-code-challlenge-2/cards/${bot.id}`}>
                   <button className="btn btn-success btn-sm m-3" >View</button>
                   </Link>
                 </div>

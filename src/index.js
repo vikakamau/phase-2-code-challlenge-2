@@ -10,11 +10,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 const router= createBrowserRouter([
 
   {
-    path: "/",
+    path: "/phase-2-code-challlenge-2",
     element: <App/>
   },
   {
-    path: "/cards/:id",
+    path: "/phase-2-code-challlenge-2/cards/:id",
     element: <Card/>
   },
 ]);

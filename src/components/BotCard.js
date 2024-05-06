@@ -29,7 +29,7 @@ function Card() {
                         <p className="card-text">catchphrase: {bot.catchphrase}</p>
                         <p className="card-text">Created At: {bot.created_at}</p>
                         <p className="card-text">Updated At: {bot.updated_at}</p>  
-                        <Link to="/">
+                        <Link to="/phase-2-code-challlenge-2">
                         <button className="btn btn-danger btn-sm m-3">Go Back</button>
                         </Link>
                          
