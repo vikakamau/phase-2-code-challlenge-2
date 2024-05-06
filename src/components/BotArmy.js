@@ -1,4 +1,4 @@
-// Bot.js
+
 import React, { useState, useEffect } from "react";
 import { getBots } from "../fetch";
 import Button from "./button";
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 function Bot() {
   const [bots, setBots] = useState([]);
-  const [enlistedBots, setEnlistedBots] = useState([]);
+  const [listBots, setlistedBots] = useState([]);
 
   useEffect(() => {
     getBots().then((data) => {
@@ -19,17 +19,18 @@ function Bot() {
   }
 
   function enlistBot(bot) {
-    if (enlistedBots.length < 4 && !enlistedBots.find((b) => b.id === bot.id)) {
-      setEnlistedBots([...enlistedBots, bot]);
+    if (listBots.length < 4 && !listBots.find((b) => b.id === bot.id)) {
+      setlistedBots([...listBots, bot]);
+      
     }
   }
   function removeFromArmy(id) {
-    setEnlistedBots(enlistedBots.filter(bot => bot.id !== id));
+    setlistedBots(listBots.filter(bot => bot.id !== id));
   }
 
   return (
     <div>
-      <Navbar army={enlistedBots} removeFromArmy={removeFromArmy}/>
+      <Navbar army={listBots} removeFromArmy={removeFromArmy}/>
       <div className="container bg-secondary">
         <div className="row">
           {bots.map((bot) => (
@@ -47,6 +48,9 @@ function Bot() {
                   <p className="card-text">Created At: {bot.created_at}</p>
                   <Button id={bot.id} onDelete={handleDelete} />
                   <button className="btn btn-primary btn-sm m-3" onClick={() => enlistBot(bot)}>Enlist</button>
+                  <Link to={`/cards/${bot.id}`}>
+                  <button className="btn btn-success btn-sm m-3" >View</button>
+                  </Link>
                 </div>
               </div>
             </div>
